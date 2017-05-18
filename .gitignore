@@ -4,6 +4,5 @@
 *.jar
 *.war
 *.ear
-*.iml
-/.idea/
+.idea/workspace.xml
 /out/
