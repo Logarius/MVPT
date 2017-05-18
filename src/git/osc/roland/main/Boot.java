@@ -7,6 +7,7 @@ public class Boot {
 	public void run() {
         // 创建及设置窗口
         JFrame frame = new JFrame("MVPT");
+        frame.setSize(600, 480);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // 添加 "Hello World" 标签
@@ -14,7 +15,6 @@ public class Boot {
         frame.getContentPane().add(label);
 
         // 显示窗口
-        frame.pack();
         frame.setVisible(true);
 	}
 	
