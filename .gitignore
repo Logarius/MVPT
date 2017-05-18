@@ -6,5 +6,4 @@
 *.ear
 /bin/
 .idea/
-.out/
 *.iml
