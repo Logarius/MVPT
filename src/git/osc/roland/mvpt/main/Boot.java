@@ -1,6 +1,6 @@
-package git.osc.roland.main;
+package git.osc.roland.mvpt.main;
 
-import git.osc.roland.common.utils.XmlParseUtils;
+import git.osc.roland.mvpt.common.utils.XmlParseUtils;
 
 import javax.swing.*;
 

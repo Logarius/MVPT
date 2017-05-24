@@ -1,8 +1,8 @@
-package git.osc.roland.common.utils;
+package git.osc.roland.mvpt.common.utils;
 
-import git.osc.roland.common.utils.xmlParseHandler.UserParseHandler;
+import git.osc.roland.mvpt.common.domain.User;
 
-import git.osc.roland.domain.User;
+import git.osc.roland.mvpt.common.utils.xmlParseHandler.UserParseHandler;
 import org.xml.sax.SAXException;
 
 

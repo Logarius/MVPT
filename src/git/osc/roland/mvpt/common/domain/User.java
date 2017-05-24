@@ -1,4 +1,4 @@
-package git.osc.roland.domain;
+package git.osc.roland.mvpt.common.domain;
 
 /**
  * Created by coy on 2017/5/24.
