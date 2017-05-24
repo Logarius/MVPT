@@ -19,7 +19,7 @@ import java.util.List;
 public class XmlParseUtils {
     public static List<User> getUsers() throws ParserConfigurationException, SAXException, IOException {
         // 加载文件返回文件的输入流
-        InputStream is = XmlParseUtils.class.getClassLoader().getResourceAsStream("users.xml");
+        InputStream is = XmlParseUtils.class.getClassLoader().getResourceAsStream("res/users.xml");
         UserParseHandler handler = new UserParseHandler();
         // 1. 得到SAX解析工厂
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
