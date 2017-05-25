@@ -8,12 +8,10 @@ import javax.swing.*;
 public class Boot {
 	
 	public void run() {
-        // 创建及设置窗口
         JFrame frame = new JFrame("MVPT");
         frame.setSize(600, 480);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        // 添加 "Hello World" 标签
         JLabel label = new JLabel("Hello World");
         frame.getContentPane().add(label);
         try {
@@ -24,12 +22,9 @@ public class Boot {
             frame.getContentPane().add(controlPanel);
 
         }catch (Exception e){
-            //...Todo
+            e.printStackTrace();
         }
 
-
-
-        // 显示窗口
         frame.setVisible(true);
 	}
 	
