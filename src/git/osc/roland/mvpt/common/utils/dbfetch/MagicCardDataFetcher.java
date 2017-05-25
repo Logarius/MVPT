@@ -1,4 +1,4 @@
-package git.osc.roland.mvpt.common.utils;
+package git.osc.roland.mvpt.common.utils.dbfetch;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
