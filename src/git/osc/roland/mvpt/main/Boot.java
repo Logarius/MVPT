@@ -1,39 +1,48 @@
 package git.osc.roland.mvpt.main;
 
-import git.osc.roland.mvpt.common.utils.XmlParseUtils;
+import git.osc.roland.mvpt.common.utils.LogUtils;
+import git.osc.roland.mvpt.common.view.Activity;
+import git.osc.roland.mvpt.deckbuilder.DeckBuilder;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+public class Boot extends Activity {
 
-public class Boot {
-	
-	public void run() {
-        JFrame frame = new JFrame("MVPT");
-        frame.setSize(600, 480);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    private JButton btnDeckBuilder, btnDuel;
 
-        JLabel label = new JLabel("Hello World");
-        frame.getContentPane().add(label);
-        try {
-            JTextArea commentTextArea = new JTextArea(XmlParseUtils.getUsers().toString());
-            JScrollPane scrollPane = new JScrollPane(commentTextArea);
-            JPanel controlPanel = new JPanel();
-            controlPanel.add(scrollPane);
-            frame.getContentPane().add(controlPanel);
+    private ActionListener actionListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            switch (e.getActionCommand()) {
+                case ViewBoot.R.btnDeckBuilder:
+                    startActivity(new DeckBuilder());
+                    dispose();
+                    break;
 
-        }catch (Exception e){
-            e.printStackTrace();
+                case ViewBoot.R.btnDuel:
+                    LogUtils.d(TAG, "duel");
+                    break;
+            }
         }
+    };
 
-        frame.setVisible(true);
-	}
-	
-	public static void main(String[] args) {
-		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+    @Override
+    protected void onCreate() {
+        setViewBuilder(new ViewBoot());
+        btnDeckBuilder = (JButton) findViewByName(ViewBoot.R.btnDeckBuilder);
+        btnDuel = (JButton) findViewByName(ViewBoot.R.btnDuel);
+
+        btnDeckBuilder.addActionListener(actionListener);
+        btnDuel.addActionListener(actionListener);
+    }
+
+    public static void main(String[] args) {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run()  {
-            	new Boot().run();
+                Activity.startActivity(new Boot());
             }
         });
-	}
-
+    }
 }
